@@ -1,0 +1,15 @@
+<%- include('content/header') -%>
+   <div class="container">
+       <% articles.forEach(article => { %>
+    <div class="post">
+    <h1 class="article-title"><%= article.title %></h1>
+    <p class="article-description"><%= article.description.substr(0, 200) %></p>
+    <a href="/articles/<%= article.slug%>"><button class="btn-details">Read More</button></a>
+    <div class="article-content">
+        <span class="author">Imran Khan</span>
+        <span class="like">Total Likes:- <%= article.likes %></span>
+    </div>
+</div>
+<% }) %>
+  </div>
+<%- include('content/footer') -%>
