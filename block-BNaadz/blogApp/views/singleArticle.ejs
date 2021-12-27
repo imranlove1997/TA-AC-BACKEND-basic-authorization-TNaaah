@@ -1,0 +1,45 @@
+<%- include('content/header') -%>
+   <div class="container">
+    <div class="post">
+    <h1 class="article-title"><%= article.title %> <span class="title-like"><a href="/articles/<%= article._id %>/like">Like This Post</a></span></h1>
+    <p class="article-description"><%= article.description %></p>
+    <a href="/articles/<%= article.slug %>/edit"><button class="btn-delete">Edit</button></a> <a href="/articles/<%= article.slug %>/delete"><button class="btn-edit">Delete</button></a>
+    <div class="article-content">
+        <span class="author"><%= article.author.fullName %></span>
+        <span class="like">Total Likes:- <%= article.likes %></span>
+    </div>
+</div>
+    <div class="comment-section"> 
+        <h3>Add Comment</h3>
+        <div class="form-control">
+            <form action="/articles/<%= article.slug %>/comment" method="POST">
+                <textarea name="comment" id="comment" cols="10" rows="5" placeholder="Enter Comment"></textarea>
+            <div class="center">
+                <input type="submit" value="Comment">
+               </div>
+            </form>
+        </div>
+    </div>
+    <div class="show-button center">
+        <button class="btn-comment">Show Comments</button>
+      <button class="btn-hide hide">Hide Comments</button> 
+    </div>
+    <div class="comments hide">
+        <% article.comments.forEach(comment => { %>
+            <div class="com">
+                <div class="comment-title"><%= comment.comment %></div>
+                <div class="comment-content">
+                <span class="comment-author"><%= comment.author.fullName %></span> <span class="comment-likes"><%= comment.likes %></span>
+            </div>
+                <div class="comment-buttons">
+                <a href="/comments/<%= comment._id %>/edit"><button>Edit</button></a>
+                <a href="/comments/<%= comment._id %>/delete"><button>Delete</button></a>
+                <a href="/comments/<%= comment._id %>/like"><button>like</button></a>
+            </div>
+        </div>
+       <% }) %>
+       
+
+        </div>
+  </div>
+<%- include('content/footer') -%>

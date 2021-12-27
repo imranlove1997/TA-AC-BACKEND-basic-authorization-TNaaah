@@ -1,0 +1,14 @@
+<%- include('content/header') -%>
+   <div class="container">
+       <div class="form form-control">
+           <h2>Add Article</h2>
+           <form action="/articles" method="POST">
+               <input type="text" name="title" id="title" placeholder="Enter Title">
+               <textarea name="description" id="description" cols="10" rows="5" placeholder="Enter Description"></textarea>
+               <div class="center">
+                <input type="submit" value="Add Article">
+               </div>
+           </form>
+       </div>
+  </div>
+<%- include('content/footer') -%>
