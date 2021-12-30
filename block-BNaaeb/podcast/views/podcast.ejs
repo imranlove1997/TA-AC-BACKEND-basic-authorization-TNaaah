@@ -1,0 +1,14 @@
+<%- include('content/header') -%>
+    <div class="container padding flex align-items wrap">
+        <% podcasts.forEach(podcast => { %>
+
+            <div class="podcast">
+                <h2 class="podcast-title"><%= podcast.title %></h2>
+                <p class="description"><%= podcast.description.substr(0,100) %></p>
+                <a href="/podcas/<%= podcast._id %>"><button class="btn-details">More Details</button></a>
+            </div>
+
+       <% }) %>
+
+</div>
+<%- include('content/footer') -%>
