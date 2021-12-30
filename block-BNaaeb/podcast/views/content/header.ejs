@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Podcast</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <nav>
+          <div class="container flex space-between align-items">
+              <a href="/" class="logo">Podcast</a>
+              <ul class="flex space-between align-items">
+                <li><a href="/">Home</a></li>
+                <% if(admin) { %>
+                    <li><a href="/users">Dashboard</a></li>
+                    <li><a href="/users/admin/logout">Logout</a></li>
+               <% } else if(user) { %>
+                    <li><a href="/users/logout">Logout</a></li>
+                    <% } else { %>
+                    <li><a href="/users/login">Login</a></li>
+                    <li><a href="/users/register">Register</a></li>
+                    <% } %>
+              </ul>
+          </div>
+      </nav>
