@@ -1,0 +1,11 @@
+<%- include('content/header') -%>
+    <div class="container padding center form form-control">
+        <h3>Add New Podcast</h3>
+   <form action="/podcast" method="POST">
+    <input type="text" name="title" id="title" placeholder="Enter Title">
+    <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter Description"></textarea>
+       <input type="submit" value="Add">
+
+   </form>
+</div>
+<%- include('content/footer') -%>

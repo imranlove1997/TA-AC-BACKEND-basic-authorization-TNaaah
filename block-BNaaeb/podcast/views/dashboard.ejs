@@ -1,0 +1,20 @@
+<%- include('content/header') -%>
+    <div class="dashboard container padding flex align-items wrap">
+        <div class="podcast">
+        <h2 class="username"><%= admin.email %></h2>
+        <div class="buttons">
+            <a href="/podcast/new"><button>Add New Podcast</button></a>
+        </div>
+    </div>
+        <% podcasts.forEach(podcast => { %>
+            <div class="podcast">
+            <h2 class="username"><%= podcast.title %></h2>
+        <div class="buttons">
+            <a href="/podcast/<%= podcasts._id %>"><button>View Podcast</button></a>
+        </div>
+    </div>
+       <% }) %>
+        
+        
+</div>
+<%- include('content/footer') -%>   

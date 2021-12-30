@@ -1,0 +1,22 @@
+<%- include('content/header') -%>
+    <div class="container padding center form form-control">
+        <h3>Register</h3>
+        <% if(email) { %>
+            <p><%= email %></p>
+       <% } %>
+       <% if(username) { %>
+        <p><%= username %></p>
+   <% } %>
+   <% if(password) { %>
+    <p><%= password %></p>
+<% } %>
+   <form action="/users/register" method="POST">
+       <input type="text" name="name" id="name" placeholder="Enter Name">
+       <input type="text" name="username" id="username" placeholder="Enter Username">
+       <input type="email" name="email" id="email" placeholder="Enter Email">
+       <input type="password" name="password" id="password" placeholder="Enter Password">
+       <input type="submit" value="Register">
+
+   </form>
+</div>
+<%- include('content/footer') -%>
